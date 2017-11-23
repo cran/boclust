@@ -1,11 +1,11 @@
-4ac723431be34f53514a82c756385c22 *DESCRIPTION
+99446ddef60856ead85546e0377ad2ac *DESCRIPTION
 27fe88f040f27bb8781c13213dd5b61f *NAMESPACE
-cdb666976298108fbfa664d73ca82193 *NEWS.md
-95d81a65fd515df7e8934af6edde46b7 *R/Bossa_Clust.R
+a650285b65f5555f9322b7983854d8f2 *NEWS.md
+10e7b457bfe7972fa0b885ecec16cc40 *R/Bossa_Clust.R
 f7d3c5b4cd0a0cbf4312a4da7e23c8bd *R/Clust_Method.R
 7fd32244cd0d62546e9ae4cb67810353 *R/bo.simu.data.R
-21ac53815318f0a49cf76d26018783e1 *R/shiny_method.R
-5c9716c4ab742e063460d6dc4a552404 *R/shiny_prepare.R
+65321b85b1aac18b23f8559a15c15fba *R/shiny_method.R
+c538182b3a233f04dc00d024c05af713 *R/shiny_prepare.R
 11a07a8bf26bb563721cc4d0fbabd7cd *README.md
 53e45033ed142468237b85d384a39bbb *data/bo.simu.data.RData
 0bb4c69cacc668b0d7a2cf60e86e946c *man/AssignLeftClust.Rd

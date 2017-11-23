@@ -251,8 +251,8 @@ bossa_interactive <- function(object){
         my.height <- dim(hc.de.plot.data)[1]
         my.width <- dim(hc.de.plot.data)[2]
 
-        d3heatmap(hc.de.plot.data, cexCol = 0.2 + 50/my.height,
-                  cexRow = 0.2 + 50/my.width, k_row = input$hc.k)
+        d3heatmap(hc.de.plot.data, cexCol = 0.2 + 20/my.height,
+                  cexRow = 0.2 + 20/my.width, k_col = input$hc.k)
       })
 
 
@@ -266,8 +266,8 @@ bossa_interactive <- function(object){
         my.height <- dim(heatmap.over())[1]
         my.width <- dim(heatmap.over())[2]
         d3heatmap(heatmap.over(),
-                  cexCol = 0.2 + 50/my.height,
-                  cexRow = 0.2 + 50/my.width, dendrogram = "none")
+                  cexCol = 0.2 + 20/my.height,
+                  cexRow = 0.2 + 20/my.width, k_col = 2)
       })
 
 

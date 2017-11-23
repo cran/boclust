@@ -142,14 +142,27 @@ BossaClust <- function(data, data.pre = NULL, alpha = 1, p = c(0.9, 0.75, 0.5),
   })
 
   # Before Merge: find different variables(genes) and prepare the data for heatmap
-  bef.de.plot.all <- FindBefDe(mer.clu, overlap.clu, U.score.non.pca, cell.name)
-  bef.de.plot <- bef.de.plot.all$bef.de.plot
-  mer.clu <- bef.de.plot.all$mer.clu
+  if(!is.numeric(mer.clu)){
+    bef.de.plot.all <- FindBefDe(mer.clu, overlap.clu, U.score.non.pca, cell.name)
+    bef.de.plot <- bef.de.plot.all$bef.de.plot
+    mer.clu <- bef.de.plot.all$mer.clu
+  } else {
+    bef.de.plot <- NULL
+    mer.clu <- NULL
+  }
 
   # Do tsne for visualization--------------------------
 
   cat("\n\nDo tsne....\n")
-  my.tsne <- Rtsne(data, perplexity = perplexity)
+
+  if(dim(data)[2] > 12000) {
+    n.pca <- dim(data)[1] * 0.8
+    data.pca <- prcomp(data)$x[,1:round(n.pca, 0)]
+    my.tsne <- Rtsne(data.pca, perplexity = perplexity)
+  } else {
+    my.tsne <- Rtsne(data, perplexity = perplexity)
+  }
+
   cell = matrix(1:n, n)
   tsne.y <- cbind(my.tsne$Y, cell)
   cat("tsne done.\n")

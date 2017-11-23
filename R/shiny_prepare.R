@@ -152,13 +152,12 @@ FindBefDe <- function(mer.clu, overlap.clu, U.score.non.pca, cell.name){
 
     left.len <- length(labels.left.ind)
     right.len <- length(labels.right.ind)
-    if(left.len < 5 |right.len < 5) next
+    if(left.len < 3 |right.len < 3) next
 
     cell.order <- c(labels.left.ind, labels.right.ind)
     my.labels <- as.factor(c(rep(1, left.len), rep(0, right.len)))
 
     ps <- colttests(as.matrix(data.bef.merge), my.labels)$p.value
-    ps <- p.adjust(ps)
     ps.ind <- which(ps < 0.05)
     if(length(ps.ind) < 20){
       next
